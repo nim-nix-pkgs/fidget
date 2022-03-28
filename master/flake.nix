@@ -11,7 +11,6 @@
   inputs.src-fidget-master.ref   = "refs/heads/master";
   inputs.src-fidget-master.owner = "treeform";
   inputs.src-fidget-master.repo  = "fidget";
-  inputs.src-fidget-master.dir   = "";
   inputs.src-fidget-master.type  = "github";
   
   inputs."typography".owner = "nim-nix-pkgs";

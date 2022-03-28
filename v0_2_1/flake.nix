@@ -11,7 +11,6 @@
   inputs.src-fidget-v0_2_1.ref   = "refs/tags/v0.2.1";
   inputs.src-fidget-v0_2_1.owner = "treeform";
   inputs.src-fidget-v0_2_1.repo  = "fidget";
-  inputs.src-fidget-v0_2_1.dir   = "";
   inputs.src-fidget-v0_2_1.type  = "github";
   
   inputs."chroma".owner = "nim-nix-pkgs";
@@ -62,13 +61,13 @@
   inputs."opengl".inputs.nixpkgs.follows = "nixpkgs";
   inputs."opengl".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
-  inputs."snappy".owner = "nim-nix-pkgs";
-  inputs."snappy".ref   = "master";
-  inputs."snappy".repo  = "snappy";
-  inputs."snappy".dir   = "";
-  inputs."snappy".type  = "github";
-  inputs."snappy".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."snappy".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  inputs."nim-snappy".owner = "nim-nix-pkgs";
+  inputs."nim-snappy".ref   = "master";
+  inputs."nim-snappy".repo  = "nim-snappy";
+  inputs."nim-snappy".dir   = "master";
+  inputs."nim-snappy".type  = "github";
+  inputs."nim-snappy".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."nim-snappy".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   inputs."html5_canvas".owner = "nim-nix-pkgs";
   inputs."html5_canvas".ref   = "master";
@@ -77,6 +76,14 @@
   inputs."html5_canvas".type  = "github";
   inputs."html5_canvas".inputs.nixpkgs.follows = "nixpkgs";
   inputs."html5_canvas".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
+  inputs."staticglfw".owner = "nim-nix-pkgs";
+  inputs."staticglfw".ref   = "master";
+  inputs."staticglfw".repo  = "staticglfw";
+  inputs."staticglfw".dir   = "4_1_3";
+  inputs."staticglfw".type  = "github";
+  inputs."staticglfw".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."staticglfw".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 

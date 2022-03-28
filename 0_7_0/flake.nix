@@ -11,7 +11,6 @@
   inputs.src-fidget-0_7_0.ref   = "refs/tags/0.7.0";
   inputs.src-fidget-0_7_0.owner = "treeform";
   inputs.src-fidget-0_7_0.repo  = "fidget";
-  inputs.src-fidget-0_7_0.dir   = "";
   inputs.src-fidget-0_7_0.type  = "github";
   
   inputs."chroma".owner = "nim-nix-pkgs";
