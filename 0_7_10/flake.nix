@@ -7,19 +7,11 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
-  inputs.src-fidget-v0_2_1.flake = false;
-  inputs.src-fidget-v0_2_1.ref   = "refs/tags/v0.2.1";
-  inputs.src-fidget-v0_2_1.owner = "treeform";
-  inputs.src-fidget-v0_2_1.repo  = "fidget";
-  inputs.src-fidget-v0_2_1.type  = "github";
-  
-  inputs."chroma".owner = "nim-nix-pkgs";
-  inputs."chroma".ref   = "master";
-  inputs."chroma".repo  = "chroma";
-  inputs."chroma".dir   = "0_2_7";
-  inputs."chroma".type  = "github";
-  inputs."chroma".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."chroma".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  inputs.src-fidget-0_7_10.flake = false;
+  inputs.src-fidget-0_7_10.ref   = "refs/tags/0.7.10";
+  inputs.src-fidget-0_7_10.owner = "treeform";
+  inputs.src-fidget-0_7_10.repo  = "fidget";
+  inputs.src-fidget-0_7_10.type  = "github";
   
   inputs."typography".owner = "nim-nix-pkgs";
   inputs."typography".ref   = "master";
@@ -28,22 +20,6 @@
   inputs."typography".type  = "github";
   inputs."typography".inputs.nixpkgs.follows = "nixpkgs";
   inputs."typography".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
-  
-  inputs."flippy".owner = "nim-nix-pkgs";
-  inputs."flippy".ref   = "master";
-  inputs."flippy".repo  = "flippy";
-  inputs."flippy".dir   = "0_4_7";
-  inputs."flippy".type  = "github";
-  inputs."flippy".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."flippy".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
-  
-  inputs."vmath".owner = "nim-nix-pkgs";
-  inputs."vmath".ref   = "master";
-  inputs."vmath".repo  = "vmath";
-  inputs."vmath".dir   = "1_2_0";
-  inputs."vmath".type  = "github";
-  inputs."vmath".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."vmath".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   inputs."print".owner = "nim-nix-pkgs";
   inputs."print".ref   = "master";
@@ -61,14 +37,6 @@
   inputs."opengl".inputs.nixpkgs.follows = "nixpkgs";
   inputs."opengl".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
-  inputs."snappy".owner = "nim-nix-pkgs";
-  inputs."snappy".ref   = "master";
-  inputs."snappy".repo  = "snappy";
-  inputs."snappy".dir   = "master";
-  inputs."snappy".type  = "github";
-  inputs."snappy".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."snappy".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
-  
   inputs."html5_canvas".owner = "nim-nix-pkgs";
   inputs."html5_canvas".ref   = "master";
   inputs."html5_canvas".repo  = "html5_canvas";
@@ -85,16 +53,32 @@
   inputs."staticglfw".inputs.nixpkgs.follows = "nixpkgs";
   inputs."staticglfw".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
+  inputs."cligen".owner = "nim-nix-pkgs";
+  inputs."cligen".ref   = "master";
+  inputs."cligen".repo  = "cligen";
+  inputs."cligen".dir   = "v1_5_27";
+  inputs."cligen".type  = "github";
+  inputs."cligen".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."cligen".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
+  inputs."supersnappy".owner = "nim-nix-pkgs";
+  inputs."supersnappy".ref   = "master";
+  inputs."supersnappy".repo  = "supersnappy";
+  inputs."supersnappy".dir   = "2_1_3";
+  inputs."supersnappy".type  = "github";
+  inputs."supersnappy".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."supersnappy".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 
     lib  = flakeNimbleLib.lib;
-    args = ["self" "nixpkgs" "flakeNimbleLib" "src-fidget-v0_2_1"];
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-fidget-0_7_10"];
     over = if builtins.pathExists ./override.nix 
            then { override = import ./override.nix; }
            else { };
   in lib.mkRefOutput (over // {
     inherit self nixpkgs ;
-    src  = deps."src-fidget-v0_2_1";
+    src  = deps."src-fidget-0_7_10";
     deps = builtins.removeAttrs deps args;
     meta = builtins.fromJSON (builtins.readFile ./meta.json);
   } );
