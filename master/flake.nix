@@ -21,14 +21,6 @@
   inputs."typography".inputs.nixpkgs.follows = "nixpkgs";
   inputs."typography".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
-  inputs."pixie".owner = "nim-nix-pkgs";
-  inputs."pixie".ref   = "master";
-  inputs."pixie".repo  = "pixie";
-  inputs."pixie".dir   = "5_0_1";
-  inputs."pixie".type  = "github";
-  inputs."pixie".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."pixie".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
-  
   inputs."print".owner = "nim-nix-pkgs";
   inputs."print".ref   = "master";
   inputs."print".repo  = "print";
